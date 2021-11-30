@@ -1,4 +1,4 @@
-name: CI
+name: build-and-deploy
 
 on:
   push:
@@ -34,9 +34,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: actions/upload-artifact@v2
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: ${{ env.BUILD_DIRECTORY }}
-          if-no-files-found: error
-          retention-days: 7
+          branch: gh-pages
+          folder: dist
