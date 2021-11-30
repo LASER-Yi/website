@@ -4,8 +4,6 @@ const Footer: FunctionComponent = () => {
   return (
     <div className="flex flex-row items-center text-white">
       <Link link="">GitHub</Link>
-      <Link link="">Steam</Link>
-      <Link link="">Instagram</Link>
     </div>
   );
 };

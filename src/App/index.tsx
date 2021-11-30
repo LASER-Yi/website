@@ -1,19 +1,15 @@
-import React, { FunctionComponent } from "react";
-import Footer from "../components/Footer";
-import DemoScene from "../Three/Scene/demo";
+import React, { FunctionComponent, useState } from "react";
 
 const App: FunctionComponent = () => {
+  const [text] = useState("/* World with only imagination */");
+
   return (
-    <div className="flex flex-col-reverse items-center min-h-screen">
-      <div className="absolute right-1/2 top-1/2 z-50 text-white">
-        <p className="font-bold text-3xl">Yi Liang</p>
-        <p className="font-light text-lg">Technical Game Designer</p>
-      </div>
-      <div className="absolute mx-auto bottom-3 z-50">
-        <Footer></Footer>
-      </div>
-      <div className="h-screen w-full z-0">
-        <DemoScene></DemoScene>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <div className="text-center">
+        <p className="font-sans font-light text-2xl tracking-wider py-4">
+          LIANG Yi
+        </p>
+        <p className="text-gray-500 font-extralight tracking-widest">{text}</p>
       </div>
     </div>
   );

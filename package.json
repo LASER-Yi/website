@@ -9,21 +9,16 @@
   },
   "private": true,
   "dependencies": {
-    "@react-spring/three": "^9",
-    "@react-spring/web": "^9",
-    "@react-three/fiber": "^7",
     "autoprefixer": "^10",
     "postcss": "^8",
     "react": "^17",
     "react-dom": "^17",
-    "tailwindcss": "^2",
-    "three": "^0.132"
+    "tailwindcss": "^2"
   },
   "devDependencies": {
     "@types/react": "^17",
     "@types/react-dom": "^17",
     "@types/react-reconciler": "^0.26.3",
-    "@types/three": "^0.131",
     "@vitejs/plugin-react-refresh": "^1",
     "eslint": "^7.32.0",
     "eslint-config-react-app": "^6.0.0",
