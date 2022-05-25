@@ -1,16 +1,41 @@
 {
   "index.html": {
-    "file": "assets/index.eb568337.js",
+    "file": "assets/index.0a87f73c.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_vendor.c234975f.js"
+      "_vendor.52940f10.js",
+      "_web.d2904294.js"
     ],
     "css": [
-      "assets/index.297e20ac.css"
+      "assets/index.2e9fcea8.css"
     ]
   },
-  "_vendor.c234975f.js": {
-    "file": "assets/vendor.c234975f.js"
+  "_vendor.52940f10.js": {
+    "file": "assets/vendor.52940f10.js"
+  },
+  "_web.d2904294.js": {
+    "file": "assets/@react-spring/web.d2904294.js",
+    "imports": [
+      "_vendor.52940f10.js"
+    ]
+  },
+  "_fiber.0548c646.js": {
+    "file": "assets/@react-three/fiber.0548c646.js",
+    "imports": [
+      "_vendor.52940f10.js"
+    ]
+  },
+  "_autoprefixer.98139bfa.js": {
+    "file": "assets/autoprefixer.98139bfa.js"
+  },
+  "_postcss.ca91e035.js": {
+    "file": "assets/postcss.ca91e035.js"
+  },
+  "_tailwindcss.ecc8e526.js": {
+    "file": "assets/tailwindcss.ecc8e526.js"
+  },
+  "_three.5a943589.js": {
+    "file": "assets/three.5a943589.js"
   }
 }
