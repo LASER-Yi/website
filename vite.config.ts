@@ -1,11 +1,52 @@
-import reactRefresh from "@vitejs/plugin-react-refresh";
-import { defineConfig } from "vite";
+/// <reference types="vite/client" />
+/// <reference types="node" />
 
-// https://vitejs.dev/config/
+import react from "@vitejs/plugin-react";
+import path from "path";
+import { defineConfig } from "vite";
+import checker from "vite-plugin-checker";
+import { dependencies } from "./package.json";
+
+const groupedDeps = ["react", "react-dom"];
+
+function renderChunks(deps: Record<string, string>) {
+  const chunks: Record<string, string[]> = {};
+
+  for (const key in deps) {
+    if (!groupedDeps.includes(key)) {
+      chunks[key] = [key];
+    }
+  }
+
+  return chunks;
+}
+
 export default defineConfig({
-  plugins: [reactRefresh()],
+  plugins: [
+    react(),
+    checker({
+      typescript: true,
+      eslint: {
+        lintCommand: "eslint --ext .ts,.tsx src",
+      },
+    }),
+  ],
   base: "./",
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
     manifest: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: groupedDeps,
+          ...renderChunks(dependencies),
+        },
+      },
+    },
   },
 });
